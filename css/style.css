@@ -11,8 +11,13 @@ body{
 }
 .banner{
     position: absolute;
+    z-index: -1;
 }
-
+.banner img{
+    width: 100%;
+    height: 105vh;
+    object-fit: cover;
+}
 .header {
     width: 100%;
     padding: 0 .5em;
@@ -23,6 +28,10 @@ body{
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
+    position: sticky;
+    z-index: 2;
+    top: 0;
+    background: var(--color-primario);
 }
 
 .header__logo {
@@ -65,7 +74,7 @@ body{
     /* background: green; */
     display: flex;
     flex-direction: column;
-    height: 120px;
+    margin-top: 35px;
     justify-content: center;
     padding: 0 0.5em
 }
@@ -132,6 +141,7 @@ progress[value] {
     -moz-appearance: none;
     appearance: none;
     border: none;
+    /* margin: 0 10px; */
     height: .5em;
     border-radius: 10em;
 }
@@ -153,14 +163,126 @@ progress[value]::-moz-progress-bar {
     background: var(--color);
 }
 
+.main__activities{
+    background: var(--color-ternario);
+    height: 100vh;
+    padding: 1.5em 0.5em;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+.activities__service{
+    /* background: blue; */
+}
+.activities__service h3,
+.activities__transactions h3{
+    /* background: darkgoldenrod; */
+    text-transform: capitalize;
+    font-family: "SF-Pro-Text-Bold";
+    font-size: 1.3em;
+    margin-bottom: 20px;
+}
+
+.service__cards{
+    /* background: olivedrab; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow-x: scroll;
+    padding: 0.8em;
+    gap: 15px;
+}
+.service__cards div{
+    flex: 1;
+    min-width: 30%;
+    min-height: 150px;
+    border-radius: 20px;
+    background: var(--color-ternario);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.150);
+    color: var(--color-primario);
+    font-family: "SF-Pro-Text-Semibold";
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.service__cards div i{
+    font-size: 2.3em;
+}
+.service__cards__item_1, 
+.service__cards__item_2, 
+.service__cards__item_3{
+    /* background: darkmagenta; */
+}
 
 
+
+
+
+.activities__transactions{
+    /* background: red; */
+}
+
+.transactions__cards{
+    /* background: orangered; */
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    gap: 15px
+}
+.transactions__cards div{
+    /* background: darkgoldenrod; */
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.transactions__cards div i {
+    font-size: 2em;
+}
+div.transactions__description,
+div.transactions__value{
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+}
+div.transactions__description{
+    align-items: flex-start;
+}
+div.transactions__value{
+    align-items: flex-end;
+}
+div.transactions__description p,
+div.transactions__value p{
+    font-family: "SF-Pro-Text-Bold";
+}
+div.transactions__description small,
+div.transactions__value small{
+    font-family: "SF-Pro-Text-Light";
+    color: var(--color-cuarto);
+}
+i.bx.bxs-up-arrow{
+    color: var(--color-secundario);
+}
+i.bxs-down-arrow{
+    color: var(--color-primario);
+}
 
 .footer {
     width: 100%;
     background: var(--color-primario);
     position: fixed;
     bottom: 0;
+    z-index: 10;
 }
 
 .footer ul {
